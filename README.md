@@ -1,2 +1,3 @@
-# Chat-React
-Chat application using react and firebase
+# React-Chat
+
+Chat application using firebase
