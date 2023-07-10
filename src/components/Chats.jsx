@@ -59,7 +59,7 @@ function Chats() {
             >
               <img src={chat[1].userInfo?.photoURL} alt="photo-user" />
               <div className="userChatInfo">
-                <span>{chat[1].userInfo?.displayName[0].toUpperCase() + chat[1].userInfo.displayName.slice(1) }</span>
+                <span>{chat[1].userInfo?.displayName[0].toUpperCase() + chat[1].userInfo?.displayName.slice(1) }</span>
                 <p>{ messages.length ? chat[1].lastMessage?.text.slice(0,10) : null}</p>
               </div>
               </div>

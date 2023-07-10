@@ -16,19 +16,22 @@ import { AuthContext } from "../context/AuthContext";
 export default function Search() {
 
   const [userName, setUserName] = useState("");
+  console.log(userName)
   const [user, setUser] = useState(null);
- // console.log(user)
+ console.log(user)
   const [err, setErr] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
   //console.log(currentUser)
 
   const handlerSearch = async () => {
-    const newUserName = userName.toLowerCase();
+   
+    const newUserName = userName;
     const q = query(
       collection(db, "users"),
       where("displayName", "==", newUserName)
     );
+ 
 
     try {
       const querySnapshot = await getDocs(q);
@@ -104,7 +107,7 @@ export default function Search() {
           <img src={user.photoURL} alt="picture user" />
           <div className="userChatInfo">
             <span>
-              {user.displayName[0].toUpperCase() + user.displayName.slice(1)}
+              {user.displayName/* [0].toUpperCase() + user.displayName.slice(1) */}
             </span>
           </div>
         </div>

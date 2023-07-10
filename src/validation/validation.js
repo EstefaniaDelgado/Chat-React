@@ -8,7 +8,7 @@ export const validation=(currentInput,inputs)=> {
     console.log(inputs)
     let errors = {};
    
-    if( !inputs.displayName) errors.displayName = "*Campo requerido";
+    // if( !inputs.displayName) errors.displayName = "*Campo requerido";
 
    if( !inputs.email) errors.email = "*Campo requerido";
 

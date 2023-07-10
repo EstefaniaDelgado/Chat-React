@@ -6,7 +6,11 @@ import { doc, setDoc } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import { validation } from '../validation/validation';
 
+
 function Register() {
+
+  
+
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [inputs, setInputs] = useState({
@@ -20,7 +24,6 @@ function Register() {
   const [errors, setErrors] = useState({});
 
   const [currentInput, setCurrentInput] = useState('');
-  console.log(currentInput)
 
   const navigate = useNavigate();
 
@@ -43,6 +46,30 @@ function Register() {
     const { name } = e.target;
     setCurrentInput(name);
   };
+
+  /* useEffect(() => {
+    setData(currentUser);
+    // This is a reference to get the current value of "inputs.full_name" 
+    const name = inputs.displayName;
+    const email = inputs.email;
+
+    if(data.some((element) => element.displayName.toLowerCase() === name.toLowerCase())){
+       setTimeout(()=>{
+        setDisabled(true)
+      }, 800)
+    }else{
+      setDisabled(false)
+    }
+
+    if(data.some((element) => element.email === email)){
+      setTimeout(()=>{
+       setDisableEmail(true)
+     }, 800)
+   }else{
+     setDisableEmail(false)
+   }
+  }, [inputs.displayName, inputs.email, data]); */
+  
 
   const handlerSubmit = async (e) => {
     setLoading(true);
@@ -87,7 +114,10 @@ function Register() {
             setLoading(false);
           }
         });
+
       });
+
+      
 
       // // Register three observers:
       // uploadTask.on(

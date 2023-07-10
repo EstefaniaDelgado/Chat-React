@@ -90,7 +90,7 @@ function Input() {
 
   return (
     <div className="inputs">
-      {img &&   <p className="msj-img">imagen </p> }
+      {img &&   <p className="msj-img"></p> }
       <input
         type="text"
         name=""
