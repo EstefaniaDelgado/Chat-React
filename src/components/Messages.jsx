@@ -5,6 +5,7 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 
 function Messages() {
+  
   const [messages, setMessages] = useState([]);
 
   const { data } = useContext(ChatContext);
@@ -18,7 +19,7 @@ function Messages() {
     };
   }, [data.chatId]);
 
-  console.log(messages);
+  //console.log(messages);
 
   return (
     <div className="messages">

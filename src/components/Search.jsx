@@ -14,8 +14,10 @@ import { db } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
 
 export default function Search() {
+
   const [userName, setUserName] = useState("");
   const [user, setUser] = useState(null);
+ // console.log(user)
   const [err, setErr] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
@@ -52,13 +54,13 @@ export default function Search() {
 
     try {
       const res = await getDoc(doc(db, "chats", combinedId));
-      // console.log(res)
+      console.log(res)
 
       if (!res.exists()) {
         //create chat in chats collection
         await setDoc(doc(db, "chats", combinedId), { messages: [] });
         //create user chats:
-        await updateDoc(doc(db, "userChats", currentUser.uid), {
+      const response=  await updateDoc(doc(db, "userChats", currentUser.uid), {
           [combinedId + ".userInfo"]: {
             uid: user.uid,
             displayName: user.displayName,
@@ -66,6 +68,7 @@ export default function Search() {
           },
           [combinedId + ".date"]: serverTimestamp(),
         });
+        console.log(response)
 
         //create user chats:
         await updateDoc(doc(db, "userChats", user.uid), {

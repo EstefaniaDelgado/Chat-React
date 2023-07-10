@@ -12,8 +12,7 @@ function Navbar() {
       <div className="user">
         <img src={currentUser.photoURL} alt="photo-user" />
         <span>
-          {currentUser.displayName[0].toUpperCase() +
-            currentUser.displayName.slice(1)}
+          {currentUser.displayName}
         </span>
         <button onClick={() => signOut(auth)}>Log out</button>
       </div>

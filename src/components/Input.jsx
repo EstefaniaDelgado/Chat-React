@@ -16,11 +16,13 @@ function Input() {
   const [text, setText] = useState("");
 
   const [img, setImg] = useState(null);
+ // console.log(img)
 
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
   const handleSend = async () => {
+    
     try {
       if (img) {
         const storageRef = ref(storage, uuid());
@@ -80,18 +82,26 @@ function Input() {
     }
   };
 
+   //handleKey
+   const handlerKey = (e) => {
+    e.code === "Enter" && handleSend();
+  };
+
+
   return (
     <div className="inputs">
+      {img &&   <p className="msj-img">imagen </p> }
       <input
         type="text"
         name=""
         id=""
         placeholder="Type something.."
+        onKeyDown={handlerKey}
         onChange={(e) => setText(e.target.value)}
         value={text}
       />
       <div className="send">
-        <i className="large material-icons">attach_file</i>
+        {/* <i className="large material-icons">attach_file</i> */}
         <input
           type="file"
           style={{ display: "none" }}

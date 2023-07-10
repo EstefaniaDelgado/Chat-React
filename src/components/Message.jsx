@@ -3,6 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 
 function Message({ message }) {
+  
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
@@ -30,10 +31,8 @@ function Message({ message }) {
         <span>Just now</span>
       </div>
       <div className="messageContent">
-        {/* {message.text ? <p>{message.text }</p> : null} */}
-        <p>{message.text}</p>
-
-        {message.img && <img src={message.img} alt="share-picture" />}
+        {message.text ? <p>{message.text }</p> : null} 
+        {message.img && <img src={message.img} alt="share-picture" style={{height:"200px", width:"200px", objectFit:"contain"}}/>}
       </div>
     </div>
   );
