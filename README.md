@@ -11,7 +11,7 @@ If you put the dot at the end of the command is because  the folder has been cre
 <hr>
 INSTALLATION DEPENDENCIES🔧:
 <hr>
-</br>
+
 ✔firebase
 </br>
 ✔react-router-dom
