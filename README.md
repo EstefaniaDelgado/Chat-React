@@ -20,6 +20,7 @@ INSTALLATION DEPENDENCIES🔧:
 </br>
 ✔sweetalert2
 </br>
+
 This project was created using react, that's why we are going to create some  components and also we use the different functions and tools provided by Firebase. 👉https://firebase.google.com/?gclid=Cj0KCQjwk7ugBhDIARIsAGuvgPaZYhp0MMZi6K8YVdvlDHkn1tKUeUWyZbofehw3JWRExiBTyPJPUnQaAr2AEALw_wcB&gclsrc=aw.ds&hl=es-419
 
 <hr>
